@@ -9,6 +9,7 @@
     <title>BrainLy</title>
     <link rel="icon" href="icon.jpg">
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="wordsearch.css">
 </head>
 
 <body>
@@ -138,6 +139,37 @@
             <button class="button-style" onclick="nextFragment()">PROCEED</button>
         </div>
 
+        <!-- Word Search -->
+
+        <div id="game-three-ins" class="fragment">
+            <div class="title-bar">
+                <h2>Word Search</h2>
+            </div>
+
+            <div class="instruction-box">
+                <p>
+                    Locate the given words in the grid, running in one of eight possible directions horizontally, vertically, or diagonally.
+                </p>
+            </div>
+
+            <div class="bottom-button">
+                <button class="button-style" onclick="nextFragment()">PROCEED</button>
+            </div>
+        </div>
+
+        <div id="game-three" class="fragment">
+            <div class="title-bar">
+                <h2>Word Search</h2>
+            </div>
+            <div class="puzzleWrap">
+                <div id='puzzle'></div>
+                <div id='words'>
+                    <button id='solve'>Solve Puzzle</button>
+                </div>    
+            </div>
+
+        </div>
+
     </div>
 
     <button id="refresh" onclick="reloadGame()"></button>
@@ -146,8 +178,10 @@
     <p id="watermark">BrainLy 2018-2019</p>
 
     <!-- Javascript -->
-
+    <script type="text/javascript" src="jquery.js"></script>
+    <script type="text/javascript" src="jquerymobile.js"></script>
     <script type="text/javascript" src="script.js"></script>
+    <script type="text/javascript" src="wordsearch.js"></script>
 
 </body>
 

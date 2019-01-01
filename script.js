@@ -22,6 +22,8 @@ onReady(function() {
     clearFragment();
     onCreate();
     showQuestion();
+    var audio = new Audio('bgmusic.mp3');
+    audio.play();
   });
 
 // Onload function

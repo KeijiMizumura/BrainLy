@@ -14,6 +14,8 @@ a {
   -webkit-tap-highlight-color: rgba(0,0,0,0);
 }
 
+button:focus { outline: none; }
+
 .loader-div{
     position: absolute;
     background-image: none;
@@ -135,8 +137,8 @@ body,html{
     border: none;
     border-radius: 50%;
     position: fixed;
-    top: 1vh;
-    right: 1vh;
+    top: 3.2vh;
+    right: 2vh;
     cursor: pointer;
 }
 
