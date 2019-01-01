@@ -167,12 +167,37 @@
                     <button id='solve'>Solve Puzzle</button>
                 </div>    
             </div>
+            <div class="bottom-button">
+                <button id="endbutton" class="button-style" onclick="nextFragment()" id="done-btn">DONE</button>
+            </div>
+        </div>
 
+        <div id="final-results" class="fragment results">
+                <div class="title-bar">
+                    <h2>Game Results</h2>
+                </div>
+    
+                <div class="result-box" id="final-result">
+                    <h3 id="game1scores"></h2>
+                    <h3 id="game2scores"></h2>
+                    <h3 id="game3scores"></h2>
+                    <div class="percentage">
+                        <h1 id="total-perc">50%</h1>
+                    </div>
+                </div>
+                <div class="bottom button">
+                    <button class="button-style" onclick="location.reload()">Play Again</button>
+                </div>
+                
         </div>
 
     </div>
 
     <button id="refresh" onclick="reloadGame()"></button>
+
+    <audio autoplay>
+        <source src="bgmusic.mp3" type="audio/mpeg">
+    </audio>
 
     <!-- This thing is a watermark -->
     <p id="watermark">BrainLy 2018-2019</p>

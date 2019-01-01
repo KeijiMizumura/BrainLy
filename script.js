@@ -1,6 +1,4 @@
 
-
-
 var homepage = document.getElementById("home-page");
 
 function onReady(callback) {
@@ -26,13 +24,11 @@ onReady(function() {
 
 // Onload function
 window.onload = function(){
-    
+   
 }
 
 function onCreate(){
     homepage.style.display = "block";
-    var audio = new Audio('./bgmusic.mp3');
-    audio.play();
 }
 
 var fragments = document.getElementsByClassName('fragment');
@@ -51,7 +47,18 @@ function reloadGame(){
 
 var currentFragmentIndex = 0;
 
+var gameOne = document.getElementById("game1scores");
+var gameTwo = document.getElementById("game2scores");
+var gameThree = document.getElementById("game3scores");
+var totalPerc = document.getElementById("total-perc");
+
 function nextFragment(){
+    if(currentFragmentIndex == 0){
+        var audio = new Audio("bgmusic.mp3");
+        audio.play();
+    }
+    var audio = new Audio("clicksound.mp3");
+    audio.play();
     currentFragmentIndex++;
     if(currentFragmentIndex >= fragments.length){
         // NO MORE FRAGMENTS
@@ -62,7 +69,11 @@ function nextFragment(){
         fragments[currentFragmentIndex - 1].style.display = "none"; 
     }
     
-}
+    gameOne.innerText = "True or False score: " + correctAnswers + "/" + questions.length;
+    gameTwo.innerText = "Indentification score: " + identificationScore + "/" + images.length;
+    gameThree.innerText = "Word Search score: " + puzzleScore + "/15";
+    totalPerc.innerText = Math.round(((correctAnswers + identificationScore + puzzleScore) / (questions.length + images.length + 15) ) * 100) + "%";
+ }
 
 var questions = [
     "A monitor displays information...",
@@ -108,6 +119,8 @@ var currentQuestion = 0;
 var correctAnswers = 0;
 
 function checkAns(ans){
+    var audio = new Audio("clicksound.mp3");
+    audio.play();
     switch(ans){
         case "True":
             console.log("Tapped true");
@@ -213,6 +226,9 @@ var identificationScore = 0;
 var identificationTitle = document.getElementById("identification-title");
 
 function choose(letter){
+
+    var audio = new Audio("clicksound.mp3");
+    audio.play();
 
     if(imageLetters[currentImageIndex] == letter){
         identificationScore++;
@@ -363,3 +379,5 @@ function choose(letter){
     }
     
 }
+
+var puzzleScore = 0;

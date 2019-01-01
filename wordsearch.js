@@ -701,6 +701,7 @@
             $('.selected').addClass('found');
             wordList.splice(i,1);
             $('.' + curWord).addClass('wordFound');
+            puzzleScore++;
           }
   
           if (wordList.length === 0) {
