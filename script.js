@@ -22,8 +22,6 @@ onReady(function() {
     clearFragment();
     onCreate();
     showQuestion();
-    var audio = new Audio('bgmusic.mp3');
-    audio.play();
   });
 
 // Onload function
@@ -33,6 +31,8 @@ window.onload = function(){
 
 function onCreate(){
     homepage.style.display = "block";
+    var audio = new Audio('./bgmusic.mp3');
+    audio.play();
 }
 
 var fragments = document.getElementsByClassName('fragment');
