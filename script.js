@@ -19,13 +19,14 @@ function setVisible(selector, visible) {
 onReady(function() {
     setVisible('.container', true);
     setVisible('#loader-div', false);
+    clearFragment();
+    onCreate();
+    showQuestion();
   });
 
 // Onload function
 window.onload = function(){
-    clearFragment();
-    onCreate();
-    showQuestion();
+    
 }
 
 function onCreate(){
