@@ -108,8 +108,29 @@
                 <h2 id="identification-title">Question #1</h2>
             </div>
             <div class="identification-image">
-                <img src="image1.jpg" alt="first-image">
+                <img id="identification-image" src="image1.jpg" alt="first-image">
             </div>
+            <div class="choices">
+                <button id="button-a" class="button-style" onclick="choose('a')">Monitor</button>
+                <button id="button-b" class="button-style" onclick="choose('b')">Hard Disk Drive</button>
+                <button id="button-c" class="button-style" onclick="choose('c')">Mother Board</button>
+                <button id="button-d" class="button-style" onclick="choose('d')">PCI-e Slots</button>
+            </div>
+        </div>
+
+        <div id="game-two-results" class="fragment results">
+            <div class="title-bar">
+                <h2>Identfication Results</h2>
+            </div>
+
+            <div class="result-box">
+                <h2>You scored <span id="idenScore" class="score-result"></span></h2>
+                <div class="percentage">
+                    <h1 id="iden-perc">50%</h1>
+                </div>
+            </div>
+
+            <button class="button-style" onclick="nextFragment()">PROCEED</button>
         </div>
 
     </div>

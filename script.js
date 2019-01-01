@@ -144,12 +144,201 @@ var imageAnswers = [
     "Processor",
     "Heatsink with fan",
     "Mother Board",
-    "Memory Card",
+    "RAM",
     "Keyboard",
     "Mouse"
+];
+
+var imageLetters = [
+    "b",
+    "c",
+    "a",
+    "d",
+    "d",
+    "a",
+    "c",
+    "a",
+    "b",
+    "c",
+    "a",
+    "d",
+    "d",
+    "b",
+    "a",
+    "a",
+    "b",
+    "d",
+    "d",
+    "a",
+    "b",
+    "d"
 ];
 
 for(var i = 0; i < 22; i++){
     images.push("image"+(i+1)+".jpg");
 }
 
+var identificationImage = document.getElementById("identification-image");
+var currentImageIndex = 0; 
+
+// Choices
+var buttonA = document.getElementById("button-a");
+var buttonB = document.getElementById("button-b");
+var buttonC = document.getElementById("button-c");
+var buttonD = document.getElementById("button-d");
+
+var identificationScore = 0;
+
+var identificationTitle = document.getElementById("identification-title");
+
+function choose(letter){
+
+    if(imageLetters[currentImageIndex] == letter){
+        identificationScore++;
+        console.log("Correct!");
+    }
+    // Increment the current Image index
+    currentImageIndex++;
+    if(currentImageIndex >= images.length){
+        // Out of images
+        nextFragment();
+        var idenScore = document.getElementById("idenScore");
+        var idenPerc = document.getElementById("iden-perc");
+        idenScore.innerText = identificationScore + "/" + images.length;
+        idenPerc.innerText = Math.round((identificationScore/images.length) * 100) + "%";
+    }
+    else{
+        identificationImage.setAttribute("src", images[currentImageIndex]);
+        identificationTitle.innerText = "Question #" + (currentImageIndex + 1);
+        switch(currentImageIndex){
+            case 1:
+                buttonA.innerText = "Sata Power Connector";
+                buttonB.innerText = "System Unit";
+                buttonC.innerText = "Optical Disk Drive";
+                buttonD.innerText = "Mouse";
+            break;
+            case 2:
+                buttonA.innerText = "Coils";
+                buttonB.innerText = "CMOS Battery";
+                buttonC.innerText = "Fan";
+                buttonD.innerText = "Hard Disk Drive";
+            break;
+            case 3:
+                buttonA.innerText = "Heatsink with fan";
+                buttonB.innerText = "24-pins ATX Power Connector";
+                buttonC.innerText = "PCI-e Slots";
+                buttonD.innerText = "Monitor";
+            break;
+            case 4:
+                buttonA.innerText = "Optical Disk Drive";
+                buttonB.innerText = "Graphics Card";
+                buttonC.innerText = "CMOS Battery";
+                buttonD.innerText = "Audio Card";
+            break;
+            case 5:
+                buttonA.innerText = "Lan Port";
+                buttonB.innerText = "Audio Card";
+                buttonC.innerText = "Drive Bays";
+                buttonD.innerText = "Hard Disk Drive";
+            break;
+            case 6:
+                buttonA.innerText = "Audio Card";
+                buttonB.innerText = "Monitor";
+                buttonC.innerText = "Graphics Card";
+                buttonD.innerText = "24-pins ATX Power Connector";
+            break;
+            case 7:
+                buttonA.innerText = "Sata Wire";
+                buttonB.innerText = "Sata Power Connector";
+                buttonC.innerText = "Coils";
+                buttonD.innerText = "CMOS Battery";
+            break;
+            case 8:
+                buttonA.innerText = "Sata Wire";
+                buttonB.innerText = "Sata Power Connector";
+                buttonC.innerText = "Audio Card";
+                buttonD.innerText = "Graphics Card";
+            break;
+            case 9:
+                buttonA.innerText = "Lan Port";
+                buttonB.innerText = "Graphics Card";
+                buttonC.innerText = "24-pins ATX Power Connector";
+                buttonD.innerText = "Coils";
+            break;
+            case 10:
+                buttonA.innerText = "4-pin Power Connector";
+                buttonB.innerText = "24-pins ATX Power Connector";
+                buttonC.innerText = "PCI-e Slots";
+                buttonD.innerText = "Keyboard";
+            break;
+            case 11:
+                buttonA.innerText = "Coils";
+                buttonB.innerText = "Mouse";
+                buttonC.innerText = "Motherboard";
+                buttonD.innerText = "Fan";
+            break;
+            case 12:
+                buttonA.innerText = "Motherboard";
+                buttonB.innerText = "Processor";
+                buttonC.innerText = "RAM";
+                buttonD.innerText = "System Unit";
+            break;
+            case 13:
+                buttonA.innerText = "24-pins ATX Power Connector";
+                buttonB.innerText = "PCI-e Slots";
+                buttonC.innerText = "Audio Card";
+                buttonD.innerText = "CMOS Battery";
+            break;
+            case 14:
+                buttonA.innerText = "Drive Bays";
+                buttonB.innerText = "Hard Disk Drive";
+                buttonC.innerText = "Fan";
+                buttonD.innerText = "System Unit";
+            break;
+            case 15:
+                buttonA.innerText = "CMOS Battery";
+                buttonB.innerText = "System Unit";
+                buttonC.innerText = "Coils";
+                buttonD.innerText = "Fan";
+            break;
+            case 16:
+                buttonA.innerText = "Motherboard";
+                buttonB.innerText = "Processor";
+                buttonC.innerText = "Hard Disk Drive";
+                buttonD.innerText = "PCI-e Slots";
+            break;
+            case 17:
+                buttonA.innerText = "Coils";
+                buttonB.innerText = "Processor";
+                buttonC.innerText = "Monitor";
+                buttonD.innerText = "Heatsink with fan";
+            break;
+            case 18:
+                buttonA.innerText = "Processor";
+                buttonB.innerText = "Audio Card";
+                buttonC.innerText = "Graphics Card";
+                buttonD.innerText = "Motherboard";
+            break;
+            case 19:
+                buttonA.innerText = "RAM";
+                buttonB.innerText = "Fan";
+                buttonC.innerText = "PCI-e Slots";
+                buttonD.innerText = "24-pins ATX Power Connector";
+            break;
+            case 20:
+                buttonA.innerText = "Mouse";
+                buttonB.innerText = "Keyboard";
+                buttonC.innerText = "Graphics Card";
+                buttonD.innerText = "Motherboard";
+            break;
+            case 21:
+                buttonA.innerText = "Audio Card";
+                buttonB.innerText = "Coils";
+                buttonC.innerText = "Keyboard";
+                buttonD.innerText = "Mouse";
+            break;
+        }
+        
+    }
+    
+}

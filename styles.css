@@ -202,10 +202,24 @@ body,html{
 
 /* Second game */
 .identification-image{
-    height: 50vh;
+    height: 40vh;
 }
 
 .identification-image img{
-    height: 100%;
-    width: 100%;
+    display: block;
+    max-width: 90vw;
+    max-height: 30vh;
+    width: auto;
+    height: auto;
+    margin: 5vh auto;
+}
+
+.choices{
+    display: block;
+    margin: auto;
+}
+
+.choices button{
+    margin: 1vh auto;
+    display: block;
 }
