@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="author" content="WaterVillage">
+    <title>BrainLy</title>
+    <link rel="icon" href="icon.jpg">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <!-- This is an app under development -->
+
+    <!-- Game Container -->
+    <!-- This contains everything -->
+
+    <div id="container" class="container">
+
+        <!-- Home Page -->
+
+        <div id="home-page" class="fragment">
+
+            <div class="title-holder">
+                <h1 class="title">BrainLy</h1>
+                <img src="icon.jpg" alt="brainly icon">
+            </div>
+
+            <div class="button-holder">
+                <button class="button-style" onclick="nextFragment()">START GAME</button>
+            </div>
+
+        </div>
+
+        <!-- True or False -->
+
+        <div id="game-one-ins" class="fragment">
+
+            <div class="title-bar">
+                <h2>True or False</h2>
+            </div>
+
+            <div class="instruction-box">
+                <p>
+                    Read each statement carefully. Tap the True button if you think a statement is TRUE. Tap the False
+                    button if you think the statement is FALSE.
+                </p>
+            </div>
+
+            <div class="bottom-button">
+                <button class="button-style" onclick="nextFragment()">PROCEED</button>
+            </div>
+
+        </div>
+
+        <div id="game-one" class="fragment">
+            <div class="title-bar">
+                <h2 id="question-title">Question #1</h2>
+            </div>
+
+            <div class="question-box">
+                <p id="question-content">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Porro, adipisci.</p>
+            </div>
+
+            <div class="question-buttons">
+                <button class="button-style" onclick="checkAns('True')">TRUE</button>
+                <button class="button-style" onclick="checkAns('False')">FALSE</button>
+            </div>
+        </div>
+
+        <div id="game-one-results" class="fragment results">
+            <div class="title-bar">
+                <h2>True or False Results</h2>
+            </div>
+
+            <div class="result-box">
+                <h2>You scored <span id="boolScore" class="score-result"></span></h2>
+                <div class="percentage">
+                    <h1 id="bool-perc">50%</h1>
+                </div>
+            </div>
+
+            <button class="button-style" onclick="nextFragment()">PROCEED</button>
+        </div>
+
+        <!-- Identification Game -->
+
+        <div id="game-two-ins" class="fragment">
+            <div class="title-bar">
+                <h2>Identification</h2>
+            </div>
+
+            <div class="instruction-box">
+                <p>
+                    Identify the given image on the screen.
+                </p>
+            </div>
+
+            <div class="bottom-button">
+                <button class="button-style" onclick="nextFragment()">PROCEED</button>
+            </div>
+        </div>
+
+        <div id="game-two" class="fragment">
+            <div class="title-bar">
+                <h2 id="identification-title">Question #1</h2>
+            </div>
+            <div class="identification-image">
+                <img src="image1.jpg" alt="first-image">
+            </div>
+        </div>
+
+    </div>
+
+    <button id="refresh" onclick="reloadGame()"></button>
+
+    <!-- This thing is a watermark -->
+    <p id="watermark">BrainLy 2018-2019</p>
+
+    <!-- Javascript -->
+
+    <script type="text/javascript" src="script.js"></script>
+
+</body>
+
+</html>
